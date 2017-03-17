@@ -2,15 +2,17 @@
 
 <form action="/landmarks/<%=@landmark.id %>" method="post">
     <label for="name"><h3>Name</h3></label>
-    
     <input type="text" name="landmark[name]" id="name" value="<%=@landmark.name %>">
+    <br>
+    <label for="year_completed"><h3>Year Completed</h3></label>
+    <input type="text" name="landmark[year_completed]" id="year_completed" value="<%=@landmark.year_completed %>">
     <br>
     <label><h3>Associated Figure</h3></label>
     <br>
     <% Figure.all.each do |figure| %>
-    <input type="radio" name="figure[][name]" value="<%=figure.name%>" id="checkbox<%=figure.id%>" <%= 'checked' if @landmark.figure == figure%>><%=figure.name%><br>
+<!--    <input type="radio" name="figure[name]" value="<%=figure.name%>" id="checkbox_<%=figure.id%>" <%= 'checked' if @landmark.figure == figure%>><%=figure.name%><br>-->
     <% end %>
-    <input type="text" name="landmark[][name]" placeholder="New Figure">
+    <input type="text" name="landmark[name]" placeholder="New Figure">
     <br>
-    <input type="submit" value="Update">
+    <input type="submit" id = "edit" value="edit">
 </form>

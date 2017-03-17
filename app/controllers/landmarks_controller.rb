@@ -18,8 +18,18 @@ class LandmarksController < ApplicationController
     
     post '/landmarks/:id' do
         #edit
+        
+        redirect "/landmarks/#{landmark.id}"
     end
     post '/landmarks' do
         #new
+        landmark = Landmark.find_by(name: params[:landmark][:name])
+        landmark ||= Landmark.create(params[:landmark])
+        
+        if !params[:figure][:name].empty?
+                
+        end
+        
+        redirect '/landmarks'
     end
 end
