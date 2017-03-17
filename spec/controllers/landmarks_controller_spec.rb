@@ -64,15 +64,15 @@ describe LandmarksController do
         fill_in :name, with: "BQE!!!!"
         fill_in :year_completed, with: 9999
         # without the next line, this does not crash Ruby
-    #    click_button :edit
-    #    @landmark = Landmark.first
-    #    expect(page.current_path).to eq("/landmarks/#{@landmark.id}")
-    #    expect(page.body).to include(@landmark.name)    
-    #
-    #    expect(page.body).to include(@landmark.year_completed.to_s)
-    #    expect(@landmark.name).to eq("BQE!!!!")
-    #
-    #    expect(@landmark.year_completed.to_s).to eq("9999")
+        click_button :edit
+        @landmark = Landmark.first
+        expect(page.current_path).to eq("/landmarks/#{@landmark.id}")
+        expect(page.body).to include(@landmark.name)    
+    
+        expect(page.body).to include(@landmark.year_completed.to_s)
+        expect(@landmark.name).to eq("BQE!!!!")
+    
+        expect(@landmark.year_completed.to_s).to eq("9999")
 
     end
 
