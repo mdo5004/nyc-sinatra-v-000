@@ -2,5 +2,5 @@ class ApplicationController < Sinatra::Base
 
   set :views, Proc.new { File.join(root, "../views/") }
   register Sinatra::Twitter::Bootstrap::Assets
-    disable :show_exceptions
+    # disable :show_exceptions
 end

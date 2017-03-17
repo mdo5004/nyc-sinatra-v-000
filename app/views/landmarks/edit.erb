@@ -10,9 +10,9 @@
     <label><h3>Associated Figure</h3></label>
     <br>
     <% Figure.all.each do |figure| %>
-<!--    <input type="radio" name="figure[name]" value="<%=figure.name%>" id="checkbox_<%=figure.id%>" <%= 'checked' if @landmark.figure == figure%>><%=figure.name%><br>-->
+   <input type="radio" name="landmark[figure_id]" value="<%=figure.id%>" id="checkbox_<%=figure.id%>" <%= 'checked' if @landmark.figure == figure%>><%=figure.name%><br>
     <% end %>
-    <input type="text" name="landmark[name]" placeholder="New Figure">
+    <input type="text" name="figure[name]" placeholder="New Figure">
     <br>
     <input type="submit" id = "edit" value="edit">
 </form>
